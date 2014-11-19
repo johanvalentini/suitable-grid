@@ -1,0 +1,31 @@
+*{
+	box-sizing: border-box;
+	
+}
+
+
+
+
+body{
+	background-color: $white;
+	color: $dark;
+}
+
+a{
+	text-decoration: none;
+	color: $color3;
+}
+
+time{
+	display: block;
+	width:100%;
+}
+
+
+.main{
+	position: relative;
+	background-color: $white;
+	
+	padding-top: $menu-height;
+	
+}

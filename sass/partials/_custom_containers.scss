@@ -1,0 +1,13 @@
+.product-container{
+	background-color: $color2;
+	padding: $gutter;
+	&.example{
+		padding: $gutter*2;
+	}
+}
+
+.footer-container{
+	background-color: $color1;
+	padding: $gutter;
+	color: $color5;
+}

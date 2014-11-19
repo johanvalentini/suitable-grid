@@ -1,0 +1,48 @@
+.nav-main{
+	z-index: 100;
+	width: 100%;
+	overflow: hidden;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-shadow: 0 0 10px -1px #e5e1e1;
+	ul{
+		margin: 0;
+		text-align: right;
+	}
+	li{
+		line-height: $base-font-size;
+		margin: (($menu-height - $base-font-size)/2) 0;
+		padding: 0 20px;
+		display: inline-block;
+		vertical-align: bottom;
+	}
+	
+	.left{
+		
+	}
+	.logo{
+		margin: (($menu-height - $base-font-size)/2) 0;
+		padding: 0 20px;
+		display: block;
+		float: left;
+		text-transform: uppercase;
+		span{
+			color: $color3;
+		}
+	}
+}
+.menu-wrapper{
+	margin: 0 auto;
+	max-width: $page-width;
+	
+}
+
+
+.menu-main{
+	max-width: $page-width;
+	
+	overflow: hidden;
+	float: right;
+}
