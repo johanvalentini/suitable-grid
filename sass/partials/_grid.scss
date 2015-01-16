@@ -103,24 +103,20 @@ img {
  
 @each $breakpoint, $value in $breakpoints {
 	@media screen and (max-width: $value+px) {
-		.#{$breakpoint}-hide {
+		.#{$breakpoint}-below-hide {
 			display: none !important;
 		}
 	}
 }
 
-/*
-	Show classes
-*/
-
-
 @each $breakpoint, $value in $breakpoints {
 	@media screen and (min-width: $value+px) {
-		.#{$breakpoint}-show {
-			display: block !important;
+		.#{$breakpoint}-above-hide {
+			display: none !important;
 		}
 	}
 }
+
 
 /*
 	Push classes
