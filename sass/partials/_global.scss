@@ -31,3 +31,8 @@ em{
 .center{
 	margin: 0 auto;
 }
+
+figure.responsive > *{
+	max-width: 100%;
+	width: 100%;
+}
