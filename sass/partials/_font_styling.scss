@@ -1,25 +1,29 @@
 body{
-	font-family: "Lato", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-weight: 300;
 }
 
 h1{
 	
-	font-weight: 900;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	.colored{
-		color: $color1;
-	}
+	
 }
 	
 h2{
 	
-	
-	letter-spacing: 1px;
-	text-transform: uppercase;
 }
 
 p{
 	
+}
+
+.colored1{
+	color: $color1;
+}
+
+.colored2{
+	color: $color2;
+}
+
+.colored3{
+	color: $color3;
 }

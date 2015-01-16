@@ -1,29 +1,57 @@
+$breakpoints: (
+	mobile: 480, 
+	tablet: 768, 
+	desktop: 960,
+);
 
 
-.main{
+
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; 
+}
+
+.section {
+	width: 100%;
+	display: block;
+	position:relative;
+}
+
+.container{
+	position:relative;
 	padding:0 $gutter;
+	max-width: $page-width;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
 .row{
 	position: relative;
 	clear:both;
-	overflow: hidden;
+	//overflow: hidden;
 	margin: 0 (-$gutter);
 	&:after, &:before{
 		content: " ";
 		display: table;	
+		clear: both;
+	}
+
+	>.center{
+		float:none;
 	}
 }
 
-
-
-.content{
-	max-width: $page-width;
-	padding: $gutter*6 0;
-	margin: 0 auto;
-	overflow: hidden;
-}
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto !important; 
+    }   
 
 /*
 	Columns
@@ -34,16 +62,26 @@
 	float: left;
 	position: relative;
 	
+	
+	
 }
 
-@for $i from 1 through $number_of_columns{
-	.span#{$i} {
-		width: ((100% / $number_of_columns)*$i);
+/*
+	Columns with breakpoints. 
+	produces ex: tablet-span12, desktop-span24
+
+*/
+
+
+@each $breakpoint, $value in $breakpoints {
+	@media screen and (min-width: $value+px) {
+		@for $i from 1 through $number_of_columns {
+			.#{$breakpoint}-span#{$i} {
+				width: ((100% / $number_of_columns)*$i);		
+			}
+		}	
 	}
 }
-
-
-
 
 
 /*
@@ -51,18 +89,50 @@
 */
 
 
-@media screen and (max-width: rem(599px)){
-	html{
-		font-size: 14px;
-
-	}
+@media screen and (max-width: map-get($breakpoints, "tablet")-1 +px){
 	.column{
-  		width: 100% !important;
+  		width: 100%;
+  		margin-bottom: $gutter;
   	}
-
 }
-@media screen and (min-width: rem(600px)){
-	html{
-		font-size: 16px;
+
+
+/*
+	Hide classes
+*/
+ 
+@each $breakpoint, $value in $breakpoints {
+	@media screen and (max-width: $value+px) {
+		.#{$breakpoint}-hide {
+			display: none !important;
+		}
 	}
 }
+
+/*
+	Show classes
+*/
+
+
+@each $breakpoint, $value in $breakpoints {
+	@media screen and (min-width: $value+px) {
+		.#{$breakpoint}-show {
+			display: block !important;
+		}
+	}
+}
+
+/*
+	Push classes
+*/
+
+@each $breakpoint, $value in $breakpoints {
+	@media screen and (min-width: $value+px ) {
+		@for $i from 1 through $number_of_columns {
+			.#{$breakpoint}-push#{$i} {
+				margin-left: ((100% / $number_of_columns)*$i);		
+			}
+		}	
+	}
+}
+
