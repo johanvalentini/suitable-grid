@@ -74,9 +74,9 @@ img {
 
 @each $breakpoint, $value in $breakpoints {
 	@media only screen and (min-width: $value+px) {
-		@for $i from 1 through $number_of_columns {
+		@for $i from 1 through $number-of-columns {
 			.#{$breakpoint}#{$i} {
-				width: ((100% / $number_of_columns)*$i);		
+				width: ((100% / $number-of-columns)*$i);		
 			}
 		}	
 	}
@@ -122,9 +122,9 @@ img {
 
 @each $breakpoint, $value in $breakpoints {
 	@media screen and (min-width: $value+px ) {
-		@for $i from 1 through $number_of_columns {
+		@for $i from 1 through $number-of-columns {
 			.#{$breakpoint}-push#{$i} {
-				margin-left: ((100% / $number_of_columns)*$i);		
+				margin-left: ((100% / $number-of-columns)*$i);		
 			}
 		}	
 	}
