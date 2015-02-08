@@ -5,15 +5,10 @@ $breakpoints: (
 );
 
 
-
-*,
-*:after,
-*:before {
-	margin: 0;
-	padding: 0;
+*{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	box-sizing: border-box; 
+	box-sizing: border-box;
 }
 
 .section {
@@ -34,7 +29,6 @@ $breakpoints: (
 .row{
 	position: relative;
 	clear:both;
-	//overflow: hidden;
 	margin: 0 (-$gutter);
 	&:after, &:before{
 		content: " ";
@@ -61,22 +55,27 @@ img {
 	padding: 0 $gutter;
 	float: left;
 	position: relative;
-	
+	width: 100%;
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 	
 	
 }
 
 /*
 	Columns with breakpoints. 
-	produces ex: tablet-span12, desktop-span24
+	produces ex: tablet12, desktop24
 
 */
 
 
 @each $breakpoint, $value in $breakpoints {
-	@media screen and (min-width: $value+px) {
+	@media only screen and (min-width: $value+px) {
 		@for $i from 1 through $number_of_columns {
-			.#{$breakpoint}-span#{$i} {
+			.#{$breakpoint}#{$i} {
 				width: ((100% / $number_of_columns)*$i);		
 			}
 		}	
@@ -85,13 +84,12 @@ img {
 
 
 /*
-	Breakpoints
+	On switch to mobile view.
 */
 
 
 @media screen and (max-width: map-get($breakpoints, "tablet")-1 +px){
 	.column{
-  		width: 100%;
   		margin-bottom: $gutter;
   	}
 }
