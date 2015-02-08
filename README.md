@@ -43,6 +43,7 @@ Contains the core of the grid classes.
 Defines some default values of common things one wants to adjust. As a suggestion one can define the primary colors of the page and other repeatedly used variables for eased consistency.
 
 ## _input.scss
+For styling input form fields
 
 ## _fonts.scss
 Used to define the standard font sizes, line-heights and margins.
