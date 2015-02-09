@@ -3,7 +3,7 @@ Suitable Grid
 
 A simple grid system written in SASS using [Compass](http://compass-style.org).
 
-A compiled version of the sass files is included in the included stylesheets folder.
+A compiled version of the sass files is found in the included stylesheets folder.
 
 ```html
 <section class="section">
@@ -33,10 +33,22 @@ A compiled version of the sass files is included in the included stylesheets fol
 		</div>
 	</div>
 </section>
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="column mobile12">
+				This fills out 50% even at small sizes
+			</div>
+			<div class="column mobile12">
+				This fills out 50% even at small sizes
+			</div>
+		</div>
+	</div>
+</section>
 ```
 
-# Structure
-Everything is put together in main.scss. Partials are provided to try and break it up a bit. Most of them are empty and are just used as a suggestion.
+# Partials structure
+Everything is put together in main.scss. Partials are provided to try and break it up a bit. Most of them are mostly empty and are just used as a suggestion.
 
 ## _grid.scss
 Contains the core of the grid classes.
