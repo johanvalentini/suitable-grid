@@ -48,7 +48,7 @@ A compiled version of the sass files is found in the included stylesheets folder
 ```
 
 # Partials structure
-Everything is put together in main.scss. Partials are provided to try and break it up a bit. Most of them are mostly empty and are just used as a suggestion.
+Everything is put together in main.scss. Partials are provided to try and break it up a bit. Most of them are mostly empty and are just used as a suggestion. Feel free to add more partials as the need arises.
 
 ## _grid.scss
 Contains the core of the grid classes.
@@ -70,5 +70,3 @@ I usually split out major sections if they are the same across multiple pages. A
 
 ## _transitions.scss
 Define transitions and animations here.
-
-
