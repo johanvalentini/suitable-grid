@@ -1,3 +1,9 @@
+/* 
+
+	Grid
+
+ */
+
 $breakpoints: (
 	mobile: 480, 
 	tablet: 768, 
@@ -47,9 +53,10 @@ img {
     height: auto !important; 
     }   
 
-/*
-	Columns
-*/
+
+////
+// Columns
+////
 
 .column{
 	padding: 0 $gutter;
@@ -65,11 +72,12 @@ img {
 	
 }
 
-/*
-	Columns with breakpoints. 
-	produces ex: tablet12, desktop24
+////
+// Columns with breakpoints. 
+// produces ex: tablet12, desktop24
+////
+	
 
-*/
 
 
 @each $breakpoint, $value in $breakpoints {
@@ -83,11 +91,9 @@ img {
 }
 
 
-/*
-	On switch to mobile view.
-*/
-
-
+////
+// On switch to mobile view.
+////
 @media screen and (max-width: map-get($breakpoints, "tablet")-1 +px){
 	.column{
   		margin-bottom: $gutter;
@@ -95,9 +101,9 @@ img {
 }
 
 
-/*
-	Hide classes
-*/
+////
+// Hide Classes
+////
  
 @each $breakpoint, $value in $breakpoints {
 	@media screen and (max-width: $value+px) {
@@ -116,9 +122,9 @@ img {
 }
 
 
-/*
-	Push classes
-*/
+////
+// Push classes
+////
 
 @each $breakpoint, $value in $breakpoints {
 	@media screen and (min-width: $value+px ) {

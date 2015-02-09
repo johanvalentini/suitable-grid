@@ -3,6 +3,8 @@ Suitable Grid
 
 A simple grid system written in SASS using [Compass](http://compass-style.org).
 
+A compiled version of the sass files is included in the included stylesheets folder.
+
 ```html
 <section class="section">
 	<div class="container">
