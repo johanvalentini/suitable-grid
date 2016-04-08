@@ -3,31 +3,31 @@ Suitable Grid
 
 A simple grid system written in SASS using [Compass](http://compass-style.org).
 
-A compiled version of the sass files is found in the included stylesheets folder.
+A compiled version of the sass files is found in the included stylesheets folder. Check the included index.html for some more examples.
 
 ```html
 <section class="section">
 	<div class="container">
 		<div class="row">
-			<div class="column tablet12">
+			<div class="column md12">
 				<h1>This is a grid!</h1>
 			</div>
-			<div class="column tablet12">
-				<h2>12 columns at tablet size</h2>
+			<div class="column md12">
+				<h2>12 columns at md size</h2>
 			</div>
 		</div>
 		<div class="row">
-			<div class="column tablet6">
-				<p>6 column at tablet size </p>
+			<div class="column md6">
+				<p>6 column at md size </p>
 			</div>
-			<div class="column tablet6">
-				<p>6 columns at tablet size</p>
+			<div class="column md6">
+				<p>6 columns at md size</p>
 			</div>
-			<div class="column tablet12">
+			<div class="column md12">
 				<div class="row">
-					<div class="column tablet8">Columns in columns!</div>
-					<div class="column tablet8">Columns in columns!</div>
-					<div class="column tablet8">Columns in columns!$</div>
+					<div class="column md8">Columns in columns!</div>
+					<div class="column md8">Columns in columns!</div>
+					<div class="column md8">Columns in columns!</div>
 				</div>
 			</div>
 		</div>
@@ -36,10 +36,10 @@ A compiled version of the sass files is found in the included stylesheets folder
 <section class="section">
 	<div class="container">
 		<div class="row">
-			<div class="column mobile12">
+			<div class="column sm12">
 				This fills out 50% even at small sizes
 			</div>
-			<div class="column mobile12">
+			<div class="column sm12">
 				This fills out 50% even at small sizes
 			</div>
 		</div>
@@ -48,7 +48,9 @@ A compiled version of the sass files is found in the included stylesheets folder
 ```
 
 # Partials structure
-Everything is put together in main.scss. Partials are provided to try and break it up a bit. Most of them are mostly empty and are just used as a suggestion. Feel free to add more partials as the need arises.
+Everything is put together in main.sass. Partials are provided to try and break it up a bit. Most of them are mostly empty and are just used as a suggestion. Feel free to remove and add more partials as the need arises.
+
+A standalone [normalize.css](git.io/normalize) is included in the libraries folder. I find it a good starting point. Take it or leave it.
 
 ## _grid.scss
 Contains the core of the grid classes.
