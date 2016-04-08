@@ -1,0 +1,109 @@
+//// 
+// Grid
+// Contains the core of the grid
+////
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+
+.section
+	width: 100%
+	display: block
+	position:relative
+
+
+.container
+	position: relative
+	padding: 0 $gutter
+	max-width: $page-width
+	margin-left: auto
+	margin-right: auto
+
+
+
+.row
+	position: relative
+	clear:both
+	margin: 0 (-$gutter)
+
+	&:after, &:before
+		content: " "
+		display: table	
+		clear: both
+	
+	>.center
+		float: none
+
+
+////
+// Columns
+////
+
+.column
+	padding: 0 $gutter
+	float: left
+	position: relative
+	width: 100%
+
+	&:after 
+		content: ""
+		display: table
+		clear: both
+	
+
+////
+// Columns with breakpoints. 
+// produces ex: md12, lg24
+////
+	
+@each $breakpoint, $value in $breakpoints 
+	@media only screen and (min-width: $value+px) 
+		@for $i from 1 through $number-of-columns 
+			.#{$breakpoint}#{$i}
+				width: ((100% / $number-of-columns)*$i)		
+			
+			
+	
+
+
+
+////
+// On switch to mobile view.
+////
+
+@media screen and (max-width: map-get($breakpoints, "md")-1 +px)
+	.column
+		margin-bottom: $gutter
+
+
+////
+// Hide Classes
+////
+ 
+@each $breakpoint, $value in $breakpoints
+	@media screen and (max-width: $value+px)
+		.#{$breakpoint}-below-hide
+			display: none !important
+		
+
+@each $breakpoint, $value in $breakpoints
+	@media screen and (min-width: $value+px)
+		.#{$breakpoint}-above-hide
+			display: none !important
+		
+
+////
+// Push classes
+////
+
+@each $breakpoint, $value in $breakpoints
+	@media screen and (min-width: $value+px )
+		@for $i from 1 through $number-of-columns
+			.#{$breakpoint}-push#{$i}
+				margin-left: ((100% / $number-of-columns)*$i)		
+	
+
+
